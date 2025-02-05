@@ -1,0 +1,255 @@
+INDEX-STYLE
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body, .container {
+    display: flex;
+    height: 100vh;
+    width: 100%;
+}
+
+.left-half {
+    width: 50%;
+    background: url('images/i3.jpg') no-repeat center center;
+    background-size: cover;
+}
+
+.right-half {
+    width: 50%;
+    background-color: beige;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 50px;
+}
+
+header {
+    text-align: left;
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+main {
+    text-align: left;
+    font-size: 18px;
+    line-height: 1.6;
+    max-width: 90%;
+    margin-bottom: 40px;
+}
+
+nav {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.nav-section {
+    margin-bottom: 15px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+}
+
+nav ul li a {
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    color: #555;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #000;
+}
+
+footer {
+    margin-top: auto;
+    font-size: 14px;
+    color: #555;
+    text-align: left;
+    padding-top: 30px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f4f4f4;
+}
+----------------------------------------------------------------------------->
+BOOK -STYLE
+
+body {
+    font-family: sans-serif;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color:rgb(166, 155, 56); 
+    color: #333; 
+}
+
+main {
+    flex: 1;
+    padding: 20px;
+    background-color:rgb(228, 222, 169); 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+}
+
+.book-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    gap: 20px;
+    height: 100%;
+}
+
+.book-item {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #f9f9f9; 
+    transition: transform 0.2s ease, box-shadow 0.2s ease; 
+}
+
+.book-item:hover {
+    transform: translateY(-5px); 
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15); 
+}
+
+
+.book-item img {
+    max-width: 100px;
+    height: auto;
+    margin-bottom: 10px;
+    border: 1px solid #ccc; 
+    padding: 5px;
+    background-color: white; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+}
+
+.book-item h2 {
+    margin-top: 0;
+    color: #555; 
+}
+
+.book-item p {
+    font-size: 0.9em; 
+    color: #777;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+--------------------------------------------------------->
+CONTACT-STYLE
+
+.contact-container {
+    width: 60%;
+    margin: 40px auto;
+    background: rgb(240, 233, 169);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+header h1 {
+    font-size: 28px;
+    color: #333;
+}
+
+header p {
+    font-size: 16px;
+    color: #666;
+    margin-top: 10px;
+}
+
+.contact-info {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.contact-info h2 {
+    font-size: 22px;
+    color: #222;
+}
+
+.contact-info p {
+    font-size: 16px;
+    color: #444;
+    margin: 5px 0;
+}
+
+.contact-form {
+    width: 100%;
+}
+
+.contact-form h2 {
+    font-size: 22px;
+    color: #222;
+    margin-bottom: 15px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+label {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+button {
+    background-color: #007BFF;
+    color: white;
+    padding: 12px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
