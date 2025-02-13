@@ -7,7 +7,9 @@ public class ThreadThree extends Thread {
 
 
         t.start();
-
+        n1.start();
+        n2.start();
+        n3.start();
 
 
 
