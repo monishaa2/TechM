@@ -13,9 +13,9 @@ public class Mapsexample {
     }
 
     public static void hashMap(HashMap<Integer, String> hm) {
-        hm.put(1, "one");
-        hm.put(2, "two");
-        hm.put(3, "three");
+        hm.put(1, "a");
+        hm.put(2, "b");
+        hm.put(3, "c");
         System.out.println("Initial Hashmap hm1 are : "
                 + hm);
         hm.put(2, "For");
@@ -32,9 +32,9 @@ public class Mapsexample {
     }
 
     public static void hashTable(Hashtable<Integer, String> ht) {
-        ht.put(1, "one");
-        ht.put(2, "two");
-        ht.put(3, "three");
+        ht.put(1, "first");
+        ht.put(2, "second");
+        ht.put(3, "third");
         System.out.println("Initial Hashtable ht are : "
                 + ht);
         ht.put(2, "For");
@@ -51,12 +51,12 @@ public class Mapsexample {
     }
 
     public static void LinkedhashMap(LinkedHashMap<Integer, String> lm) {
-        lm.put(1, "one");
-        lm.put(2, "two");
-        lm.put(3, "three");
+        lm.put(1, "college");
+        lm.put(2, "engineering");
+        lm.put(3, "course");
         System.out.println("Initial linkedHashMap lm are : "
                 + lm);
-        lm.put(2, "For");
+        lm.put(2, "electronics");
         System.out.println("Updated Map " + lm);
         lm.remove(1);
         System.out.println("Mappings after removal are : "
@@ -71,12 +71,12 @@ public class Mapsexample {
     }
 
     public static void treeMap(TreeMap<Integer, String> tm) {
-        tm.put(1, "one");
-        tm.put(2, "two");
-        tm.put(3, "three");
+        tm.put(1, "html");
+        tm.put(2, "css");
+        tm.put(3, "javascript");
         System.out.println("Initial treeMap tm1 are : "
                 + tm);
-        tm.put(2, "For");
+        tm.put(2, "sql");
         System.out.println("Updated Map " + tm);
         tm.remove(1);
         System.out.println("Mappings after removal are : "
