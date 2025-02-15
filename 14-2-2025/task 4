@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+  </head>
+  <body>
+      <h3>display the address </h3>
+      <p id="demo"></p>
+      <button onclick="alertbox()">click the button</button>
+      <script>
+        function alertbox()
+        {
+  let text;
+  let address = prompt("Please enter your address");
+  if (address== null || address == "") {
+    text = "oops! you didnt enter the address";
+  } else {
+    text = "your address is " + address;
+  }
+  document.getElementById("demo").innerHTML = text;
+
+        }
+      </script>
+  </body>
+</html>
