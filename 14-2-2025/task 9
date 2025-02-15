@@ -1,0 +1,17 @@
+var month = " december"
+var year =  2024
+if(year % 4 == 0)
+{
+  if(month == "february")
+  {
+    console.log("the year is leap year and the month is february with 29 days");
+  }
+  else
+  {
+    console.log("the year is leap year and the month is not february with 29 days");
+  }
+}
+else
+{
+  console.log("the year is not leap year");
+}
