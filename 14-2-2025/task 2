@@ -1,0 +1,5 @@
+var a = -10
+if(a>0)
+console.log(a+ " is a positive number");
+else
+console.log(a+ " is a negative number");
