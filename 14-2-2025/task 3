@@ -10,3 +10,12 @@ var count=0;
     }
     c++;
   }
+if(count ===2)
+{
+  console.log("it is a prime number");
+}
+else
+{
+  console.log("it is not a prime number");
+}
+
