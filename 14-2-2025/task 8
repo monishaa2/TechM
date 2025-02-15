@@ -1,0 +1,14 @@
+var price =[20,30,400,30,25,40,50];
+var sum =0;
+for(i =0; i< price.length ;i++)
+{
+  sum += price[i];
+}
+if (sum / 7 > 50)
+{
+  console.log("tomato has given good profit");
+}
+else
+{
+  console.log(" tomato has given no profit");
+}
