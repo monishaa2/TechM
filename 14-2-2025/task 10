@@ -1,0 +1,24 @@
+var score =70
+if(score == 100)
+{
+  console.log("phenomenol");
+}
+else if(score >85)
+{
+  console.log("excellent");
+}
+
+else if(score >= 71 && score <= 85)
+{
+  console.log("good work");
+  
+}
+else if(score >= 51 && score <= 70)
+{
+  console.log("practice well");
+  
+}
+else
+{
+  console.log("Hard work is needed");
+}
