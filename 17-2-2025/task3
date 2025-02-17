@@ -1,0 +1,23 @@
+var a 
+var sum
+function f1(a)
+{
+  while(a!=0)
+   {
+   let d = a%10;
+  sum = 0 + d;
+   a =a/10;
+  
+   }
+
+}
+  if(sum%2 == 0 )
+  {
+    console.log("even")
+  }
+  else
+  {
+    console.log("odd");
+  }
+
+f1(23);
