@@ -1,0 +1,11 @@
+var a = 5;
+var b = 12;
+function multiply()
+{
+  for(i =1; i<= b ;i++)
+  {
+    console.log(a + " * " + i +" = "+ a*i);
+  }
+}
+
+multiply();
