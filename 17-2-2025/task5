@@ -1,0 +1,55 @@
+
+var student = {
+  Id: 168,
+  Name: "Anisha",
+  Department: "ECE",
+  College: "Panimalar Engineering College",
+  email: "anishahakunamatah@gmail.com"
+};
+
+
+function access() {
+  console.log(student);
+}
+
+
+function displayproperties() {
+  console.log("ID:", student.Id);
+  console.log("Name:", student.Name);
+  console.log("Email:", student.email);
+}
+
+student.address = {
+  doorno: 24,
+  street: "4th street",
+  area: "Anna Nagar",
+  pincode: "600124"
+};
+
+
+function display2() {
+  console.log("Student Details:");
+  console.log("ID:", student.Id);
+  console.log("Name:", student.Name);
+  console.log("Department:", student.Department);
+  console.log("College:", student.College);
+  console.log("Address:");
+  console.log("Door No:", student.address.doorno);
+  console.log("Street:", student.address.street);
+  console.log("Area:", student.address.area);
+  console.log("Pincode:", student.address.pincode);
+}
+
+
+access();
+displayproperties();
+display2();
+
+delete student.email;
+console.log("\nAfter deleting email and the 'displayproperties' function:");
+
+/*function displayproperties() {
+  console.log("This function has been removed.");
+}*/
+
+displayproperties(); 
