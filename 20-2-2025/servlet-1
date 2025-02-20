@@ -1,0 +1,130 @@
+form.html
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<form action="loginPage" method="post"> 
+  User Name:<input type="text" name="uname"/><br/> 
+  Password:<input type="password" name="upass"/><br/> 
+  <input type="submit" value="SUBMIT"/> 
+</form>
+</body>
+</html>
+------------------------------------------------------------->
+
+index.html
+
+
+
+<html><body> 
+    <form action="redirect" method="get"> 
+        <h2>sendRedirect() method in Java Servlets</h2>           
+<p> endRedirect() method, redirects the client request from the one servlet to another servlet.  </p>   
+        For More information <input type="submit" value="Click Here">   </form> </body></html>
+
+--------------------------------------------------------------->
+
+Validation.java
+
+package package2;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import jakarta.servlet.RequestDispatcher;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+
+/**
+ * Servlet implementation class Validation
+ */
+@WebServlet("/loginPage")
+public class Validation extends HttpServlet 
+{    
+   public void doPost(HttpServletRequest request, 
+     HttpServletResponse response) 
+       throws ServletException, IOException 
+   {
+response.setContentType("text/html");      
+       PrintWriter pwriter = response.getWriter();                
+       String name=request.getParameter("uname");      
+       String pass=request.getParameter("upass");
+if(name.equals("Chaitanya") && 
+          pass.equals("beginnersbook"))
+       {          
+          RequestDispatcher dis=request.getRequestDispatcher("welcome");          
+          dis.forward(request, response);      
+       }
+
+else
+       {      
+          pwriter.print("User name or password is incorrect!");          
+          RequestDispatcher dis=request.getRequestDispatcher("index.html");          
+          dis.include(request, response);                                }}}
+
+--------------------------------------------------------------->
+
+WelcomeUser.java
+
+package package2;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+
+/**
+ * Servlet implementation class Welcome
+ */
+@WebServlet("/welcome")
+public class WelcomeUser extends HttpServlet { 
+	 
+	 public void doPost(HttpServletRequest request, 
+	 HttpServletResponse response) 
+	 throws ServletException, IOException 
+	 {
+
+	
+	response.setContentType("text/html"); 
+	    PrintWriter pwriter = response.getWriter(); 
+	 
+	    String name=request.getParameter("uname"); 
+	    pwriter.print("Hello "+name+"!");
+	    pwriter.print(" Welcome to Beginnersbook.com");}}
+
+--------------------------------------------------------------->
+
+ServletRedirect
+
+
+package package2;
+
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import java.io.IOException;
+
+/**
+ * Servlet implementation class ServletRedirect
+ */
+
+@WebServlet("/redirect") 
+public class ServletRedirect extends HttpServlet { 
+
+	@Override
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException { 
+
+		resp.sendRedirect("https://www.geeksforgeeks.org/url-rewriting-using-java-servlet/"); 	} }
