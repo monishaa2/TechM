@@ -1,0 +1,147 @@
+
+
+CreateCookieServlet.java
+
+public class CreateCookieServlet extends HttpServlet {
+    private static final long serialVersionUID = 1L;
+
+    protected void doPost(HttpServletRequest request, 
+      HttpServletResponse response)
+                 throws ServletException, IOException {
+    response.setContentType("text/html"); 
+        PrintWriter out = response.getWriter();
+
+
+
+        String userName = request.getParameter("userName").trim();
+        String password = request.getParameter("password").trim();
+        
+        //check for null and empty values.
+        if(userName == null || userName.equals("") || 
+                password == null || password.equals("")){
+            out.print("Please enter both username " +
+                    "and password. <br><br>");
+RequestDispatcher requestDispatcher = 
+                request.getRequestDispatcher("/login.html");
+            requestDispatcher.include(request, response);
+        }//Check for valid username and password.
+        else if(userName.equals("jai") && password.equals("1234")){
+
+            Cookie cookie1 = new Cookie("userName",userName);
+            Cookie cookie2 = new Cookie("password",password);
+            //add cookie in the response object.
+            response.addCookie(cookie1);
+            response.addCookie(cookie2);
+            out.print("<h3>Cookies are created. Click on the " +
+                    "below button to get cookies."); 
+          out.print("<form action="GetCookieServlet" method="POST">");
+out.print("<input type="submit" value="Get Cookie">");  
+                out.print("</form>");  
+                  
+                out.close();  
+        }else{
+            out.print("Wrong username or password. <br><br>");
+RequestDispatcher requestDispatcher = 
+                request.getRequestDispatcher("/login.html");
+            requestDispatcher.include(request, response);}}}
+
+
+----------------------------------------------------------------------------------------------------->
+
+GetCookieServlet.java
+
+public class GetCookieServlet extends HttpServlet {
+    protected void doPost(HttpServletRequest request, 
+        HttpServletResponse response)
+                      throws ServletException, IOException {
+    response.setContentType("text/html"); 
+        PrintWriter out = response.getWriter();
+try{
+           Cookie cookies[] = request.getCookies();
+           for(Cookie cookie : cookies){
+            out.println("Cookie Name: " + cookie.getName());
+            out.println("Cookie Value: " + cookie.getValue());
+            out.println("");
+out.println("Click on the below button to delete cookies.");
+          out.print("<form action="DeleteCookieServlet" method="POST">");
+          out.print("<input type="submit" value="Delete Cookies">");
+          out.print("</form>");
+          out.close();}catch(Exception e){
+            e.printStackTrace();} }}
+
+--------------------------------------------------------------------------------------------------------------------->
+DeleteCookieServlet.java
+
+public class DeleteCookieServlet extends HttpServlet {
+  
+    protected void doPost(HttpServletRequest request, 
+       HttpServletResponse response)
+                    throws ServletException, IOException {
+    response.setContentType("text/html"); 
+        PrintWriter out = response.getWriter();
+try{
+            Cookie cookies[] = request.getCookies();
+            out.print("Deleted cookie are:");
+            for(Cookie cookie : cookies){
+               cookie.setMaxAge(0);
+               out.println("Cookie name: " + cookie.getName());}
+            out.close();  
+        }catch(Exception e){
+            e.printStackTrace();}}}
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------->
+login.html
+
+    <form action="CreateCookieServlet" method="post">
+        Username:<input type="text" name="userName">
+                <br><br>
+        Password:<input type="password" name="password">
+                <br><br> 
+        <input type="submit" value="login"> 
+    </form>
+
+---------------------------------------------------------------------------------------------------------------------------------------->
+
+Hidden Form Field Sample
+
+index.html
+
+<form method="post" action="validate">
+  Name:<input type="text" name="user" /><br/>
+  Password:<input type="text" name="pass" ><br/>
+  <input type="submit" value="submit">
+</form>
+
+---------------------------------------------------------------------------------------------------------------------------------------->
+
+First.java
+
+public class First extends HttpServlet {
+
+  protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        response.setContentType("text/html;charset=UTF-8");
+        PrintWriter out = response.getWriter();
+        
+	
+        String user = request.getParameter("user");
+
+        out.println("<form action='Second'>");
+        out.println("<input type='hidden' name='user' value='"+user+"'>");
+        out.println("<input type='submit' value='submit' >");
+        out.println("</form>");    }}
+
+
+
+------------------------------------------------------------------------------------------------------------------------------------------>
+Second.java
+
+public class Second extends HttpServlet {
+
+  protected void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        response.setContentType("text/html;charset=UTF-8");
+        PrintWriter out = response.getWriter();
+
+        String user = request.getParameter("user");
+        out.println("Welcome "+user);    }}
