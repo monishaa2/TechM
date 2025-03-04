@@ -66,13 +66,13 @@
                 let totalDays = parseInt(localStorage.getItem("totalDays")) || 0;
                 let workoutHistory = JSON.parse(localStorage.getItem("workoutHistory")) || [];
         
-                // Add new workout
+                
                 storedRoutines.push({ workout, duration, intensity });
                 totalDuration += duration;
                 totalDays += 1;
                 workoutHistory.push({ day: totalDays, duration });
         
-                // Store values in localStorage
+                
                 localStorage.setItem("userRoutines", JSON.stringify(storedRoutines));
                 localStorage.setItem("totalDuration", totalDuration);
                 localStorage.setItem("totalDays", totalDays);
