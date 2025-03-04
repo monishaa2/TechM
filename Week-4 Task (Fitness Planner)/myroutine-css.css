@@ -1,4 +1,4 @@
-/* General Styles */
+
 body {
     background-color: #E6F7FF;
     color: #002B5B;
@@ -11,7 +11,7 @@ body {
     min-height: 100vh;
 }
 
-/* Navigation Bar */
+
 nav {
     background-color: #005A9C;
     padding: 15px 0;
@@ -36,7 +36,7 @@ nav a:hover {
     border-radius: 8px;
 }
 
-/* Header */
+
 header {
     font-size: 32px;
     font-weight: bold;
@@ -44,7 +44,7 @@ header {
     color: #002B5B;
 }
 
-/* Main Content */
+
 main {
     flex: 1;
     padding: 20px;
@@ -59,7 +59,7 @@ h2 {
     margin-bottom: 15px;
 }
 
-/* Routine List */
+
 #routine-list {
     background: white;
     padding: 20px;
@@ -83,7 +83,7 @@ strong {
     color: #002B5B;
 }
 
-/* Buttons */
+
 button {
     background-color: #B3E0FF;
     border: none;
@@ -101,7 +101,7 @@ button:hover {
     color: white;
 }
 
-/* Footer */
+
 footer {
     background-color: #005A9C;
     color: white;
