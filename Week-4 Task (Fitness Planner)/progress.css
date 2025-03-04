@@ -1,4 +1,4 @@
-/* General Styling */
+
 body {
     background-color: #E6F7FF;
     color: #002B5B;
@@ -11,7 +11,7 @@ body {
     min-height: 100vh;
 }
 
-/* Navigation Bar */
+
 nav {
     background-color: #005A9C;
     padding: 15px 0;
@@ -36,7 +36,7 @@ nav a:hover {
     border-radius: 8px;
 }
 
-/* Progress Container */
+
 .container {
     flex: 1;
     padding: 40px 20px;
@@ -67,15 +67,15 @@ h2 {
     transform: scale(1.02);
 }
 
-/* Chart */
+
 .chart-container {
     width: 80%;
-    max-width: 400px;  /* SMALLER CHART */
-    height: 250px;   /* REDUCED HEIGHT */
+    max-width: 400px;  
+    height: 250px;   
     margin-top: 20px;
 }
 
-/* Buttons */
+
 button {
     background-color: #B3E0FF;
     border: none;
@@ -93,7 +93,7 @@ button:hover {
     color: white;
 }
 
-/* Footer */
+
 footer {
     background-color: #005A9C;
     color: white;
