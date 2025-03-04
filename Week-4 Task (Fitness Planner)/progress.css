@@ -1,0 +1,104 @@
+/* General Styling */
+body {
+    background-color: #E6F7FF;
+    color: #002B5B;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Navigation Bar */
+nav {
+    background-color: #005A9C;
+    padding: 15px 0;
+    text-align: center;
+    border-radius: 0 0 20px 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px;
+    transition: all 0.3s;
+}
+
+nav a:hover {
+    background-color: #B3E0FF;
+    color: #002B5B;
+    border-radius: 8px;
+}
+
+/* Progress Container */
+.container {
+    flex: 1;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h2 {
+    color: #005A9C;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.progress-box {
+    background: white;
+    width: 60%;
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    font-size: 18px;
+    font-weight: bold;
+    margin: 10px 0;
+    transition: all 0.3s ease-in-out;
+}
+
+.progress-box:hover {
+    transform: scale(1.02);
+}
+
+/* Chart */
+.chart-container {
+    width: 80%;
+    max-width: 400px;  /* SMALLER CHART */
+    height: 250px;   /* REDUCED HEIGHT */
+    margin-top: 20px;
+}
+
+/* Buttons */
+button {
+    background-color: #B3E0FF;
+    border: none;
+    padding: 12px 25px;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+    margin-top: 15px;
+}
+
+button:hover {
+    background-color: #005A9C;
+    color: white;
+}
+
+/* Footer */
+footer {
+    background-color: #005A9C;
+    color: white;
+    padding: 15px 0;
+    text-align: center;
+    font-size: 14px;
+    margin-top: auto;
+}

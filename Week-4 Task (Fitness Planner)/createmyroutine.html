@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create My Routine</title>
+    <link rel="stylesheet" href="createmyroutine-css.css">
+</head>
+<body>
+    <header>CREATE MY ROUTINE</header>
+    <p>"Build your perfect workout routine by choosing your exercises, duration, and intensity level. Stay consistent and track your progress effortlessly!"</p>
+
+    <nav>
+        <a href="welcome.html">HOME</a>
+        <a href="createmyroutine.html">CREATE ROUTINE</a>
+        <a href="myroutine.html">MY ROUTINE</a>
+        <a href="progress.html">PROGRESS TRACKER</a>
+    </nav>
+
+    <form>
+        <label for="workoutype">SELECT YOUR WORKOUT TYPE</label>
+        <select id="workoutype">
+            <option>PILATES</option>
+            <option>CARDIO</option>
+            <option>HIIT</option>
+            <option>STRENGTH TRAINING</option>
+            <option>YOGA</option>
+        </select>
+
+        <label for="duration">SELECT YOUR WORKOUT DURATION</label>
+        <select id="duration">
+            <option>10 MINUTES</option>
+            <option>20 MINUTES</option>
+            <option>30 MINUTES</option>
+            <option>40 MINUTES</option>
+            <option>60 MINUTES</option>
+        </select>
+
+        <label for="intensity">SELECT YOUR INTENSITY OF WORKOUT</label>
+        <select id="intensity">
+            <option>EASY</option>
+            <option>MEDIUM</option>
+            <option>DIFFICULT</option>
+        </select>
+    </form>
+
+    <button id="addRoutineBtn">ADD TO MY ROUTINE</button>
+    <a href="myroutine.html" id="goToRoutineLink">GO TO MY ROUTINE</a>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const addRoutineBtn = document.getElementById("addRoutineBtn");
+        
+            addRoutineBtn.addEventListener("click", function () {
+                const workout = document.getElementById("workoutype").value;
+                const duration = parseInt(document.getElementById("duration").value);
+                const intensity = document.getElementById("intensity").value;
+        
+                if (!workout || isNaN(duration) || !intensity) {
+                    alert("Please select all fields!");
+                    return;
+                }
+        
+                let storedRoutines = JSON.parse(localStorage.getItem("userRoutines")) || [];
+                let totalDuration = parseInt(localStorage.getItem("totalDuration")) || 0;
+                let totalDays = parseInt(localStorage.getItem("totalDays")) || 0;
+                let workoutHistory = JSON.parse(localStorage.getItem("workoutHistory")) || [];
+        
+                // Add new workout
+                storedRoutines.push({ workout, duration, intensity });
+                totalDuration += duration;
+                totalDays += 1;
+                workoutHistory.push({ day: totalDays, duration });
+        
+                // Store values in localStorage
+                localStorage.setItem("userRoutines", JSON.stringify(storedRoutines));
+                localStorage.setItem("totalDuration", totalDuration);
+                localStorage.setItem("totalDays", totalDays);
+                localStorage.setItem("workoutHistory", JSON.stringify(workoutHistory));
+        
+                alert("Workout added successfully!");
+            });
+        });
+        </script>
+        
+</body>
+</html>

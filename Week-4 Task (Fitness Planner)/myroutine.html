@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Routine | FitFlair</title>
+    <link rel="stylesheet" href="myroutine-css.css">
+</head>
+<body>
+    <header>MY WORKOUT ROUTINE</header>
+    
+    <nav>
+        <a href="welcome.html">HOME</a>
+        <a href="createmyroutine.html">CREATE ROUTINE</a>
+        <a href="myroutine.html">MY ROUTINE</a>
+        <a href="progress.html">PROGRESS TRACKER</a>
+    </nav>
+
+    <main>
+        <h2>Your Workout Routine</h2>
+        <div id="routine-list"></div>
+
+        <h2>Your Selected Routine</h2>
+        <div id="routine-container">
+            <p><strong>Workout Type:</strong> <span id="workout">N/A</span></p>
+            <p><strong>Duration:</strong> <span id="duration">N/A</span></p>
+            <p><strong>Intensity:</strong> <span id="intensity">N/A</span></p>
+        </div>
+
+        <button id="clear-routine">Clear All Routines</button>
+    </main>
+
+    <footer>© 2025 FITFLAIR. All Rights Reserved.</footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const routineList = document.getElementById("routine-list");
+            const workoutEl = document.getElementById("workout");
+            const durationEl = document.getElementById("duration");
+            const intensityEl = document.getElementById("intensity");
+            const clearRoutineBtn = document.getElementById("clear-routine");
+        
+            let storedRoutines = JSON.parse(localStorage.getItem("userRoutines")) || [];
+        
+            function updateRoutineList() {
+                routineList.innerHTML = "";
+        
+                if (storedRoutines.length === 0) {
+                    routineList.innerHTML = "<p>No routines added yet.</p>";
+                    return;
+                }
+        
+                storedRoutines.forEach((routine, index) => {
+                    let routineItem = document.createElement("div");
+                    routineItem.classList.add("routine-item");
+                    routineItem.innerHTML = `
+                        <p><strong>${routine.workout}</strong></p>
+                        <p>Duration: ${routine.duration} minutes</p>
+                        <p>Intensity: ${routine.intensity}</p>
+                        <button class="delete-btn" data-index="${index}">Remove</button>
+                    `;
+                    routineList.appendChild(routineItem);
+                });
+        
+                document.querySelectorAll(".delete-btn").forEach(button => {
+                    button.addEventListener("click", function () {
+                        let index = this.getAttribute("data-index");
+                        storedRoutines.splice(index, 1);
+                        localStorage.setItem("userRoutines", JSON.stringify(storedRoutines));
+                        updateRoutineList();
+                        updateSelectedRoutine();
+                    });
+                });
+            }
+        
+            function updateSelectedRoutine() {
+                if (storedRoutines.length > 0) {
+                    let latestRoutine = storedRoutines[storedRoutines.length - 1];
+                    workoutEl.textContent = latestRoutine.workout;
+                    durationEl.textContent = latestRoutine.duration + " minutes";
+                    intensityEl.textContent = latestRoutine.intensity;
+                } else {
+                    workoutEl.textContent = "N/A";
+                    durationEl.textContent = "N/A";
+                    intensityEl.textContent = "N/A";
+                }
+            }
+        
+            clearRoutineBtn.addEventListener("click", function () {
+                localStorage.removeItem("userRoutines");
+                storedRoutines = [];
+                updateRoutineList();
+                updateSelectedRoutine();
+            });
+        
+            updateRoutineList();
+            updateSelectedRoutine();
+        });
+        </script>
+        
+</body>
+</html>
