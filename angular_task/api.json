@@ -1,0 +1,22 @@
+{
+  "routines": [
+    {
+      "id": "d9d7",
+      "name": "routine1",
+      "type": "Yoga",
+      "duration": 45,
+      "goal": "loseweight",
+      "intensity": "High",
+      "days": []
+    },
+    {
+      "id": "19d8",
+      "name": "Monisha",
+      "type": "Cardio",
+      "duration": 10,
+      "goal": "",
+      "intensity": "Low",
+      "days": []
+    }
+  ]
+}

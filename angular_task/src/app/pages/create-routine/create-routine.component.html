@@ -1,0 +1,56 @@
+<div class="container">
+  <h2 class="text-center">Create Your Workout Routine</h2>
+
+  <form [formGroup]="routineForm" (ngSubmit)="submitRoutine()" class="routine-form">
+    
+   
+    <div class="form-group">
+      <label for="name">Routine Name:</label>
+      <input id="name" type="text" class="form-control" formControlName="name" placeholder="Enter routine name" required>
+    </div>
+
+   
+    <div class="form-group">
+      <label for="type">Workout Type:</label>
+      <select id="type" class="form-control" formControlName="type" required>
+        <option value="" disabled>Select workout type</option>
+        <option *ngFor="let type of workoutTypes" [value]="type">{{ type }}</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="duration">Duration (minutes):</label>
+      <input id="duration" type="number" class="form-control" formControlName="duration" min="1" required>
+    </div>
+
+
+    <div class="form-group">
+      <label for="goal">Workout Goal:</label>
+      <input id="goal" type="text" class="form-control" formControlName="goal" placeholder="e.g. Build muscle, Lose weight">
+    </div>
+
+    <div class="form-group">
+      <label for="intensity">Intensity Level:</label>
+      <select id="intensity" class="form-control" formControlName="intensity" required>
+        <option value="" disabled>Select intensity</option>
+        <option *ngFor="let level of intensityLevels" [value]="level">{{ level }}</option>
+      </select>
+    </div>
+
+ 
+    <div class="form-group">
+      <label>Select Workout Days:</label>
+      <div class="days-checkboxes">
+        <div *ngFor="let day of daysOfWeek">
+          <input type="checkbox" [value]="day" (change)="toggleDay($event)"> {{ day }}
+        </div>
+      </div>
+    </div>
+
+   
+    <div class="text-center">
+      <button type="submit" class="btn btn-primary" [disabled]="!routineForm.valid">Create Routine</button>
+    </div>
+
+  </form>
+</div>

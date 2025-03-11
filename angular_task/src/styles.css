@@ -1,0 +1,88 @@
+/* 🎨 Global Reset & Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* 🌟 Overall Page Styling */
+body {
+    background-color: #FFFFFF; /* Pure White */
+    color: #333333; /* Dark Grey for readability */
+    line-height: 1.6;
+}
+
+/* 🏠 Welcome Page Styling */
+.home-container {
+    max-width: 800px;
+    margin: 60px auto; /* Centered with space from the header */
+    padding: 40px;
+    text-align: center;
+    background: #FFFFFF; /* Clean white box */
+    border-radius: 12px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* 📝 Headings */
+h1 {
+    font-size: 2.5rem;
+    color: #222222; /* Deep grey for elegance */
+    font-weight: bold;
+}
+
+p {
+    font-size: 1.1rem;
+    color: #555555; /* Softer grey */
+}
+
+/* 🎯 Buttons */
+button {
+    background: #3A86FF; /* Soft blue accent */
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+button:hover {
+    background: #2B6DFF; /* Slightly darker blue */
+}
+
+/* 📌 Routine Cards */
+.routine-card {
+    background: #FAFAFA; /* Very light grey for contrast */
+    padding: 20px;
+    margin: 15px 0;
+    border-radius: 10px;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.routine-card h3 {
+    color: #222222;
+}
+
+/* 🚀 Progress Tracker */
+.progress-container {
+    background: #F8F9FA; /* Slightly off-white for soft contrast */
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.08);
+}
+
+.progress-score {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #3A86FF;
+}
+
+/* 📱 Responsive Design */
+@media (max-width: 768px) {
+    .home-container {
+        width: 90%;
+        padding: 30px;
+    }
+}

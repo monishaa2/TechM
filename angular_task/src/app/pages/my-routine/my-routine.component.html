@@ -1,0 +1,14 @@
+<div class="container">
+  <h2>My Workout Routines</h2>
+
+  <div *ngIf="routines.length === 0" class="message">
+    No routines added yet.
+  </div>
+
+  <div *ngFor="let routine of routines" class="routine-card">
+    <h3>{{ routine.name | titlecase }}</h3>
+    <p><strong>Type:</strong> {{ routine.type | uppercase }}</p>  
+    <p><strong>Duration:</strong> {{ routine.duration | duration }}</p> <!-- Pipe applied here -->
+    <p *ngIf="routine.goal"><strong>Goal:</strong> {{ routine.goal | lowercase }}</p>  
+  </div>
+</div>

@@ -1,0 +1,61 @@
+/* 🌿 Home Page Styling */
+.home-container {
+  max-width: 900px;
+  margin: 40px auto; /* Adds small space from header */
+  padding: 60px;
+  text-align: center;
+  background: #FFFFFF; /* Clean white */
+  border-radius: 12px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* 🎉 Welcome Title */
+.home-container h1 {
+  font-size: 2.8rem;
+  color: #222222;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+/* ✨ Welcome Paragraph */
+.home-container p {
+  font-size: 1.3rem;
+  color: #555555;
+  line-height: 1.6;
+  max-width: 80%;
+  margin: 0 auto 20px;
+}
+
+/* 🎯 Get Started Button */
+.home-container button {
+  background: #050505; /* Soft blue accent */
+  color: white;
+  padding: 14px 30px;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.home-container button:hover {
+  background: #5f6267;
+  transform: scale(1.05);
+}
+
+/* 📱 Responsive Design */
+@media (max-width: 768px) {
+  .home-container {
+      width: 95%;
+      padding: 40px;
+  }
+  .home-container h1 {
+      font-size: 2.2rem;
+  }
+  .home-container p {
+      font-size: 1.1rem;
+  }
+  .home-container button {
+      font-size: 1rem;
+  }
+}

@@ -1,0 +1,24 @@
+<div class="progress-container">
+  <h2>Your Progress</h2>
+
+  <div class="progress-item">
+    <label>Total Workout Days:</label>
+    <p>{{ totalWorkoutDays }}</p>
+    <div class="progress-bar">
+      <div class="progress-fill" [style.width.%]="totalWorkoutDays * 5"></div>
+    </div>
+  </div>
+
+  <div class="progress-item">
+    <label>Total Workout Minutes:</label>
+    <p>{{ totalWorkoutMinutes }} min</p>
+    <div class="progress-bar">
+      <div class="progress-fill" [style.width.%]="totalWorkoutMinutes / 10"></div>
+    </div>
+  </div>
+
+  <div class="progress-item">
+    <label>Consistency Score:</label>
+    <p>{{ consistencyScore }}</p>
+  </div>
+</div>
